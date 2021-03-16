@@ -1,0 +1,15 @@
+{
+  "name": "lainan-air",
+  "version": "0.0.1",
+  "description": "Lainan Air",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lainan-Air/main-app.git"
+  },
+  "author": "MonHu",
+  "license": "MIT"
+}
