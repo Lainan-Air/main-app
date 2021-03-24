@@ -2,11 +2,25 @@ html {
     background: #87CEFA;
     font-family: "NSJ";
     font-size: calc(12px + ((1vw – 8px) * 1.2));
+    color: #203240;
+}
+
+::selection {
+    text-shadow: 0px 0px 16px #ffffff;
 }
 
 @font-face {
     font-family: "NSJ";
     src: url("font/NotoSansJP-Light.otf");
+}
+
+@font-face {
+    font-family: "icon_ot";
+    src: url("font/MaterialIconsOutlined-Regular.otf");
+}
+
+.icon_ot {
+    font-family: "icon_ot";
 }
 
 ::-webkit-scrollbar {
@@ -25,7 +39,7 @@ html {
 
 
 .air {
-    background: -webkit-linear-gradient(0deg, #7992ff, #79ffe6);
+    background: -webkit-linear-gradient(0deg, #7C87FD, #7CFDE9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -34,4 +48,136 @@ html {
     width: 92%;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+.btn {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff64;
+    border-radius: 8px;
+    padding: 0 8px;
+    font-size: calc(12px + (1vw – 8px));
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background-color: #fffffff0;
+}
+
+.effect-fade {
+    opacity: 0;
+    transform: translate(0, 50%);
+    transition: all 1s;
+}
+
+.effect-fade.effect-scroll {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.scrollme {
+    text-align: center;
+    transition: all 0.5s;
+    opacity: 0;
+    display: block;
+}
+
+.scrollme.view {
+    opacity: 1;
+}
+
+#how_use_video {
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #87CEFA;
+}
+
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.circles-to-rhombuses-spinner,
+.circles-to-rhombuses-spinner * {
+    box-sizing: border-box;
+    margin: 40vh auto;
+}
+
+.circles-to-rhombuses-spinner {
+    height: 15px;
+    width: calc((15px + 15px * 1.125) * 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circles-to-rhombuses-spinner .circle {
+    height: 15px;
+    width: 15px;
+    margin-left: calc(15px * 1.125);
+    transform: rotate(45deg);
+    border-radius: 10%;
+    border: 3px solid #ff1d5e;
+    overflow: hidden;
+    background: transparent;
+
+    animation: circles-to-rhombuses-animation 1200ms linear infinite;
+}
+
+.circles-to-rhombuses-spinner .circle:nth-child(1) {
+    animation-delay: calc(150ms * 1);
+    margin-left: 0
+}
+
+.circles-to-rhombuses-spinner .circle:nth-child(2) {
+    animation-delay: calc(150ms * 2);
+}
+
+.circles-to-rhombuses-spinner .circle:nth-child(3) {
+    animation-delay: calc(150ms * 3);
+}
+
+@keyframes circles-to-rhombuses-animation {
+    0% {
+        border-radius: 10%;
+    }
+
+    17.5% {
+        border-radius: 10%;
+    }
+
+    50% {
+        border-radius: 100%;
+    }
+
+
+    93.5% {
+        border-radius: 10%;
+    }
+
+    100% {
+        border-radius: 10%;
+    }
+}
+
+@keyframes circles-to-rhombuses-background-animation {
+    50% {
+        opacity: 0.4;
+    }
 }
